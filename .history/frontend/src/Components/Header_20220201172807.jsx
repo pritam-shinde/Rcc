@@ -37,13 +37,13 @@ const Header = ({ myInfo, logout }) => {
                                 <Box><Avatar src={`./image/${myInfo.image}`} alt={myInfo.username} sx={{ width: 24, height: 24 }} /></Box>
                                 <Box>
                                     <h5 style={{ fontSize: "1rem" }}>{myInfo.username}</h5>
-                                    <Button onClick={() => { handleClose(); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
+                                    <Button onClick={() => { setAnchorEl(null); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
                                     <Popover open={isModalVisible} anchorOrigin={{ vertical: 'center', horizontal: 'center', }}>
                                         <div className="card" style={{ width: "35rem" }}>
-                                            <div className="card-header d-flex justify-content-between align-items-center">
+                                            <div className="card-header">
                                                 <h5>Profile</h5>
-                                                <IconButton onClick={()=> setIsModalVisible(!isModalVisible)}>
-                                                    <AiOutlineClose />
+                                                <IconButton>
+<AiOutlineClose />
                                                 </IconButton>
                                             </div>
                                             <div className="card-body">
@@ -63,7 +63,7 @@ const Header = ({ myInfo, logout }) => {
                                                             <BsBriefcaseFill style={{ marginRight: "1rem" }} />
                                                             <div className="media-body">
                                                                 <small>Company</small>
-                                                                <h6 style={{ fontSize: "0.9375rem" }}>Nonstop</h6>
+                                                                <h6 style={{fontSize:"0.9375rem"}}>Nonstop</h6>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -72,7 +72,7 @@ const Header = ({ myInfo, logout }) => {
                                                             <FiMail style={{ marginRight: "1rem" }} />
                                                             <div className="media-body">
                                                                 <small>Email</small>
-                                                                <h6 style={{ fontSize: "0.9375rem" }}>{myInfo.email}</h6>
+                                                                <h6 style={{fontSize:"0.9375rem"}}>{myInfo.email}</h6>
                                                             </div>
                                                         </div>
                                                     </div>

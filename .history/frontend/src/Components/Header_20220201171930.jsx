@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { AppBar, Toolbar, Link, Box, IconButton, Avatar, Popover, Divider, Button, Card, CardHeader, CardContent, CardActions, Badge, makeStyles } from '@material-ui/core';
 import { FaSearch } from 'react-icons/fa'
-import { AiOutlinePoweroff, AiOutlineClose } from 'react-icons/ai';
+import { AiOutlinePoweroff } from 'react-icons/ai';
 import { BsBriefcaseFill } from 'react-icons/bs'
-import { FiMail } from 'react-icons/fi'
 
 const useStyles = makeStyles(theme => ({
     header: { backgroundImage: `linear-gradient(to right, #017eaa, #0096b7, #00adbc, #00c3b7, #47d7ac);`, }
@@ -37,14 +36,11 @@ const Header = ({ myInfo, logout }) => {
                                 <Box><Avatar src={`./image/${myInfo.image}`} alt={myInfo.username} sx={{ width: 24, height: 24 }} /></Box>
                                 <Box>
                                     <h5 style={{ fontSize: "1rem" }}>{myInfo.username}</h5>
-                                    <Button onClick={() => { handleClose(); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
+                                    <Button onClick={() => { setAnchorEl(null); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
                                     <Popover open={isModalVisible} anchorOrigin={{ vertical: 'center', horizontal: 'center', }}>
                                         <div className="card" style={{ width: "35rem" }}>
-                                            <div className="card-header d-flex justify-content-between align-items-center">
+                                            <div className="card-header">
                                                 <h5>Profile</h5>
-                                                <IconButton onClick={()=> setIsModalVisible(!isModalVisible)}>
-                                                    <AiOutlineClose />
-                                                </IconButton>
                                             </div>
                                             <div className="card-body">
                                                 <div className="media">
@@ -59,23 +55,15 @@ const Header = ({ myInfo, logout }) => {
                                             <div className="card-footer">
                                                 <div className="row">
                                                     <div className="col-md-6 col-12">
-                                                        <div className='media'>
+                                                        <Box className='d-flex'>
                                                             <BsBriefcaseFill style={{ marginRight: "1rem" }} />
-                                                            <div className="media-body">
-                                                                <small>Company</small>
-                                                                <h6 style={{ fontSize: "0.9375rem" }}>Nonstop</h6>
-                                                            </div>
-                                                        </div>
+                                                            <h6>Company</h6>
+                                                        </Box>
+                                                        <Box>
+                                                            <h5>Nonstop</h5>
+                                                        </Box>
                                                     </div>
-                                                    <div className="col-md-6 col-12">
-                                                        <div className="media">
-                                                            <FiMail style={{ marginRight: "1rem" }} />
-                                                            <div className="media-body">
-                                                                <small>Email</small>
-                                                                <h6 style={{ fontSize: "0.9375rem" }}>{myInfo.email}</h6>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    <div className="col-md-6 col-12"></div>
                                                 </div>
                                             </div>
                                         </div>

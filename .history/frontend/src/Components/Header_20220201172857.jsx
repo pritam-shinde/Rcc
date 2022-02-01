@@ -37,12 +37,12 @@ const Header = ({ myInfo, logout }) => {
                                 <Box><Avatar src={`./image/${myInfo.image}`} alt={myInfo.username} sx={{ width: 24, height: 24 }} /></Box>
                                 <Box>
                                     <h5 style={{ fontSize: "1rem" }}>{myInfo.username}</h5>
-                                    <Button onClick={() => { handleClose(); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
+                                    <Button onClick={() => { setAnchorEl(null); setIsModalVisible(!isModalVisible) }}>View Profile</Button>
                                     <Popover open={isModalVisible} anchorOrigin={{ vertical: 'center', horizontal: 'center', }}>
                                         <div className="card" style={{ width: "35rem" }}>
                                             <div className="card-header d-flex justify-content-between align-items-center">
                                                 <h5>Profile</h5>
-                                                <IconButton onClick={()=> setIsModalVisible(!isModalVisible)}>
+                                                <IconButton>
                                                     <AiOutlineClose />
                                                 </IconButton>
                                             </div>
