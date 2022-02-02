@@ -11,9 +11,8 @@ const App = () => {
         <Routes>
           <Route path="/messenger/login" element={<Login />} />
           <Route path="/messenger/register" element={<Register />} />
-          {
-            authenticate ? <Route path="/" element={<Messenger />} /> : <Route path="/" element={<Navigate replace to="/messenger/login" />} />
-          }
+          <Route path="/" element={<Messenger />} />
+          
         </Routes>
       </BrowserRouter>
     </>

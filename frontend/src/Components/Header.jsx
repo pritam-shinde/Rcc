@@ -4,6 +4,7 @@ import { FaSearch } from 'react-icons/fa'
 import { AiOutlinePoweroff, AiOutlineClose } from 'react-icons/ai';
 import { BsBriefcaseFill } from 'react-icons/bs'
 import { FiMail } from 'react-icons/fi'
+import { MdLightMode, MdDarkMode } from 'react-icons/md'
 
 const useStyles = makeStyles(theme => ({
     header: { backgroundImage: `linear-gradient(to right, #017eaa, #0096b7, #00adbc, #00c3b7, #47d7ac);`, }
@@ -42,7 +43,7 @@ const Header = ({ myInfo, logout }) => {
                                         <div className="card" style={{ width: "35rem" }}>
                                             <div className="card-header d-flex justify-content-between align-items-center">
                                                 <h5>Profile</h5>
-                                                <IconButton onClick={()=> setIsModalVisible(!isModalVisible)}>
+                                                <IconButton onClick={() => setIsModalVisible(!isModalVisible)}>
                                                     <AiOutlineClose />
                                                 </IconButton>
                                             </div>
@@ -85,6 +86,14 @@ const Header = ({ myInfo, logout }) => {
                             <Divider />
                             <Box px={2}>
                                 <Button variant="contained" color="primary" size='large' className='mb-2'>Upgrade Now</Button>
+                                <Box>
+                                    <IconButton style={{marginRight:"0.7rem"}}>
+                                        <MdLightMode />
+                                    </IconButton>
+                                    <IconButton>
+                                        <MdDarkMode />
+                                    </IconButton>
+                                </Box>
                                 <Button onClick={() => logout()}><AiOutlinePoweroff style={{ marginRight: '0.5rem', color: "red" }} />Sign Out</Button>
                             </Box>
                         </Box>

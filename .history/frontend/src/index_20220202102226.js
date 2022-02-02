@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/js/bootstrap.bundle';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Login, Register, Messenger } from './Components/Components'
 
@@ -12,7 +12,7 @@ const App = () => {
           <Route path="/messenger/login" element={<Login />} />
           <Route path="/messenger/register" element={<Register />} />
           {
-            authenticate ? <Route path="/" element={<Messenger />} /> : <Route path="/" element={<Navigate replace to="/messenger/login" />} />
+            authenticate ? <Route path="/" element={<Messenger />} /> : <Navigate to="/messenger/login" />
           }
         </Routes>
       </BrowserRouter>

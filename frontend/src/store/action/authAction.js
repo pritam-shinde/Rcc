@@ -65,7 +65,6 @@ export const userLogin = (data) => {
 }
 
 export const userLogout = () => async (dispatch) => {
-    console.log('logout')
     try {
         const response = await axios.post('/api/messenger/user-logout')
         if (response.data.successMessage) {
